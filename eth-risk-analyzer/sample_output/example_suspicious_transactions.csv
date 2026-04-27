@@ -1,1 +1,0 @@
-blockNumber,blockHash,timeStamp,hash,nonce,transactionIndex,from,to,value,gas,gasPrice,input,methodId,functionName,contractAddress,cumulativeGasUsed,txreceipt_status,gasUsed,confirmations,isError
