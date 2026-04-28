@@ -4,6 +4,13 @@
 
 A Python-based blockchain analytics tool designed to evaluate Ethereum wallet activity and identify potentially suspicious transaction patterns.
 
+## Quick Start
+
+pip install -r requirements.txt
+python eth_analyzer.py
+
+Enter an Ethereum wallet address when prompted.
+
 ## Features
 
 * Retrieves real-time transaction data using Etherscan API
@@ -11,6 +18,18 @@ A Python-based blockchain analytics tool designed to evaluate Ethereum wallet ac
 * Detects behavioral anomalies (e.g. high-value transfers, address concentration)
 * Assigns a wallet risk score (0–100)
 * Exports structured datasets for further investigation
+
+## Example Output
+
+--- Summary ---
+Total transactions: 100
+Total ETH moved: 0.0013
+Largest transaction: 0.0012
+
+--- Risk Analysis ---
+⚠️ High concentration of transactions to a single address
+
+Wallet Risk Score: 30/100
 
 ## How It Works
 
