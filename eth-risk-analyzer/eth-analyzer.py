@@ -22,8 +22,6 @@ params = {
 response = requests.get(url, params=params)
 data = response.json()
 
-print(data)  # TEMP DEBUG
-
 if data.get("status") != "1":
     print("Error:", data)
     exit()
@@ -43,8 +41,20 @@ print(df[["from", "to", "value"]].head())
 # RISK ANALYSIS
 print("\n--- Risk Analysis ---")
 
+risk_score = 0
+
 high_value = df[df["value"] > 50]
 top_receivers = df["to"].value_counts().head(3)
+
+df["timeStamp"] = pd.to_datetime(df["timeStamp"], unit="s")
+
+time_diff = df["timeStamp"].diff().dt.total_seconds()
+
+print(f"Rapid transactions count: {(time_diff < 10).sum()}")
+
+if (time_diff < 10).sum() > 5:
+    print("⚠️ Rapid transaction activity detected")
+    risk_score += 20
 
 if len(high_value) > 0:
     print(f"⚠️ {len(high_value)} high-value transactions detected")
