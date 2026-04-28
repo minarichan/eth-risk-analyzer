@@ -18,6 +18,7 @@ Enter an Ethereum wallet address when prompted.
 * Detects behavioral anomalies (e.g. high-value transfers, address concentration)
 * Assigns a wallet risk score (0–100)
 * Exports structured datasets for further investigation
+* Includes time-based anomaly detection to identify rapid transaction bursts often associated with automated or malicious activity.
 
 ## Example Output
 
