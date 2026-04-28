@@ -53,11 +53,11 @@ time_diff = df["timeStamp"].diff().dt.total_seconds()
 print(f"Rapid transactions count: {(time_diff < 10).sum()}")
 
 if (time_diff < 10).sum() > 5:
-    print("⚠️ Rapid transaction activity detected")
+    print("Rapid transaction activity detected")
     risk_score += 20
 
 if len(high_value) > 0:
-    print(f"⚠️ {len(high_value)} high-value transactions detected")
+    print(f"{len(high_value)} high-value transactions detected")
 
 print("\nTop receiver addresses:")
 for address, count in top_receivers.items():
@@ -76,7 +76,7 @@ if not top_receivers.empty:
     concentration_ratio = top_count / len(df)
 
     if concentration_ratio > 0.8:
-        print("⚠️ High concentration of transactions to a single address")
+        print("High concentration of transactions to a single address")
         risk_score += 20
 
 print(f"\nWallet Risk Score: {risk_score}/100")
