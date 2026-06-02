@@ -28,7 +28,7 @@ Total ETH moved: 0.0013
 Largest transaction: 0.0012
 
 --- Risk Analysis ---
-⚠️ High concentration of transactions to a single address
+High concentration of transactions to a single address
 
 Wallet Risk Score: 30/100
 
